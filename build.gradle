@@ -1,0 +1,120 @@
+buildscript {
+    repositories {
+        maven {
+            name = "Minecraft Forge maven"
+            url = "https://maven.minecraftforge.net"
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7.+'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
+
+group = 'de.srendi.noaddrepcost'
+version = '1.0'
+
+java {
+    archivesBaseName = 'noaddrepcost'
+    toolchain.languageVersion = JavaLanguageVersion.of(8)
+}
+
+wrapper {
+    gradleVersion = '7.5'
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+minecraft {
+
+    mappings channel: 'official', version: '1.16.5'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                noaddrepcost {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            mods {
+                noaddrepcost {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            property 'forge.logging.console.level', 'debug'
+
+            args '--mod', 'noaddrepcost', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+
+            mods {
+                noaddrepcost {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+mixin {
+    // MixinGradle Settings
+    add sourceSets.main, 'mixin.noaddrepcost.refmap.json'
+    config 'noaddrepcost.mixin.json'
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
+
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "noaddrepcost",
+                "Specification-Vendor"    : "Srendi",
+                "Specification-Version"   : "${version}",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "Srendi",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs" : "noaddrepcost.mixin.json"
+
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

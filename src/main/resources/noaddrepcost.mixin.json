@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "de.srendi.noaddrepcost.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mixins.noaddrepcost.refmap.json",
+  "mixins": [
+    "ItemStackMixin"
+  ]
+}

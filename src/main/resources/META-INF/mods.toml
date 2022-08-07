@@ -1,0 +1,25 @@
+
+modLoader = "javafml"
+loaderVersion = "[36,)"
+license = "All Rights Reserved"
+[[mods]]
+
+modId = "noaddrepcost"
+version = "${file.jarVersion}"
+displayName = "NoAddRepCost"
+authors = "Srendi"
+description = '''
+Removed the additional repair cost of anvils when you merge a lot of items together
+'''
+[[dependencies.noaddrepcost]]
+modId = "forge"
+mandatory = true
+versionRange = "[36,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.noaddrepcost]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.16.5,1.17)"
+ordering = "NONE"
+side = "BOTH"
