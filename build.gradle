@@ -17,7 +17,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'de.srendi.noaddrepcost'
-version = '1.0'
+version = "${minecraft_version}-${mod_version}"
+archivesBaseName = "noaddrepcost"
 
 java {
     archivesBaseName = 'noaddrepcost'
@@ -31,7 +32,7 @@ wrapper {
 
 minecraft {
 
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: "${minecraft_version}"
 
     runs {
         client {
