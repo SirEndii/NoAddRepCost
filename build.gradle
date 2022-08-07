@@ -21,7 +21,7 @@ version = '1.0'
 
 java {
     archivesBaseName = 'noaddrepcost'
-    toolchain.languageVersion = JavaLanguageVersion.of(8)
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
 }
 
 wrapper {
@@ -31,7 +31,7 @@ wrapper {
 
 minecraft {
 
-    mappings channel: 'official', version: '1.16.5'
+    mappings channel: 'official', version: '1.18.2'
 
     runs {
         client {
@@ -92,7 +92,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.5-36.2.39'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.1.69'
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }

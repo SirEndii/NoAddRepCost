@@ -1,6 +1,6 @@
 
 modLoader = "javafml"
-loaderVersion = "[36,)"
+loaderVersion = "[40,)"
 license = "All Rights Reserved"
 [[mods]]
 
@@ -14,12 +14,12 @@ Removed the additional repair cost of anvils when you merge a lot of items toget
 [[dependencies.noaddrepcost]]
 modId = "forge"
 mandatory = true
-versionRange = "[36,)"
+versionRange = "[40.1.69,)"
 ordering = "NONE"
 side = "BOTH"
 [[dependencies.noaddrepcost]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.16.5,1.17)"
+versionRange = "[1.18.2,1.19)"
 ordering = "NONE"
 side = "BOTH"

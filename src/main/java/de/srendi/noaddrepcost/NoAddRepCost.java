@@ -4,8 +4,6 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.stream.Collectors;
-
 @Mod(NoAddRepCost.MODID)
 public class NoAddRepCost {
 
