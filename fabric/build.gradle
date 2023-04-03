@@ -41,7 +41,7 @@ shadowJar {
 remapJar {
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-    classifier null
+    classifier = "${minecraft_version}-${loom.platform.get().name().toLowerCase()}"
 }
 
 jar {
