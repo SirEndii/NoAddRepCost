@@ -1,4 +1,21 @@
 # Project exclude paths
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
 /.gradle/
 /common/.gradle/
 /common/build/
@@ -6,3 +23,19 @@
 /fabric/build/
 /forge/.gradle/
 /forge/build/
+
+# other
+eclipse
+run
+server
+
+# Files from Forge MDK
+forge*changelog.txt
+
+#github
+
+1.17
+.env
+
+test-files
+logs/
