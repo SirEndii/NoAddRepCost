@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "noaddrepcost",
+  "version": "${version}",
+  "name": "NoAddRepCost",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All Rights Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "NoAddRepCost.mixins.json",
+    "NoAddRepCost-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.19",
+    "minecraft": ">=1.18.2"
+  }
+}
