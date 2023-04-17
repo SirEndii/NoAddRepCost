@@ -8,6 +8,6 @@ public class NoAddRepCost {
     public static final Logger LOGGER = LogManager.getLogger();
 
     public static void init() {
-        LOGGER.info("You're now additional repair costs free <3");
+        LOGGER.info("You're now additional repair costs free :3");
     }
 }
